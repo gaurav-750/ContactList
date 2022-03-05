@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+            <%= locals.dynamicTitle %>
+        </title>
+
+        <link rel="stylesheet" href="/css/homeStyles.css">
+    </head>
+    <body>
+        <h1 id="page-heading">My Contact List</h1>
+
+
+        <div class="list-div">
+                <% for (var item of locals.contact_list) { %>
+                    <div class="individual-contact">
+
+                        <div class="info-div">
+                            <span id="span-name"> <%= item.name %> </span>
+                            <span id="span-number"> <%= item.phoneNumber %> </span>
+                        </div>
+
+                         <!-- delete button -->
+                        <div>                   <!-- /?phone <%= item.phone %> : Query params -->
+                            <a href="/delete-Contact/<%= item._id %>" class="delete-button">
+                                <img src="/Images/rectangle-xmark-solid.svg" alt="">
+                            </a>        
+                        </div>
+
+                    </div>
+                <% } %>   
+        </div>
+       
+
+        <!-- Form for taking User Input: -->
+        <div class="list-div" id="form-div">
+            <form action="/createContacts" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="number" name="phoneNum" placeholder="Phone" required> 
+               
+                <button type="submit"> Add </button>
+                <!-- When we press the submit button, the input will go to createContacts
+                    in index.js -->
+            </form>    
+        </div>
+       
+    <script type="text/javascript" src="/js/homeScript.js"></script>
+    </body>
+</html>

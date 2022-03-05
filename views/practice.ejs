@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <h1>Playground</h1>
+
+     <!-- List -->
+     <ul>
+        <% for(let i = 1; i <= 10; i++){ %>
+            <li> <%= i %> </li>
+        <% } %>
+    </ul>
+
+    <!-- COnditionals: -->
+    <% if(true){ %>
+        <h1> It's True! </h1>
+    <% }else{ %>
+        <h1> It's False! </h1>
+    <% } %>
+</body>
+</html>

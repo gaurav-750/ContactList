@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    background-color: aliceblue;
+}
+
+#page-heading{
+    /* border: 1px solid red; */
+    text-align: center;
+    margin-top: 25px;
+    color: sienna;
+    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#page-heading::before{
+    /* border: 1px solid black; */
+    content: ' ';
+    background-image: url(/Images/contact-book.png);
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-size: cover;
+    margin-right: 5px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.list-div{
+    width: 38%;
+    position: relative;
+    left: 31%;
+    padding: 0;
+    display: block;
+}
+
+.individual-contact{
+    /* border: 1px solid orange; */
+    background-color: #548CFF;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    /* border: none; */
+    border-radius: 2px;
+    padding: 1%;
+    font-size: 1.6rem;
+}
+
+.info-div{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 2;
+}
+
+.individual-contact span{
+    color: white;
+    /* font-size: x-large; */
+}
+
+.individual-contact:hover{
+    background-color: grey;
+}
+
+#span-name{
+    /* border: 1px solid black; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 7px;
+}
+
+#span-number{
+    /* border: 1px solid black; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 7px;
+}
+
+#form-div{
+    /* border: 1px solid black; */
+    margin-top: 1rem;
+}
+
+#form-div form{
+    /* border: 1px solid pink; */
+    width: 100%;
+    padding: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#form-div input{
+    font-size: 0.9rem;
+    width: 44%;
+}
+
+#form-div button{
+    width: 10%;
+    /* font-size: 1rem; */
+    /* padding: 0.1rem; */
+    background-color: grey;
+    color: white;
+}
+
+.delete-button img{
+    display: inline-block;
+    height: 2rem;
+    width: 35px;
+    margin-top: 2px;
+}
