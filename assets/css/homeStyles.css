@@ -13,6 +13,7 @@ body{
 }
 
 #page-heading::before{
+    /* display: grid; */
     /* border: 1px solid black; */
     content: ' ';
     background-image: url(/Images/contact-book.png);
@@ -101,9 +102,16 @@ body{
     color: white;
 }
 
-.delete-button img{
+.delete-button i{
     display: inline-block;
     height: 2rem;
-    width: 35px;
+    width: 30px;
     margin-top: 2px;
+    /* border: 1px solid yellow; */
+    color: yellow;
+    text-align: center;
+}
+
+.delete-button{
+    /* background-color: red; */
 }

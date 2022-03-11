@@ -1,3 +1,4 @@
+//requiring mongoose:
 const mongoose = require('mongoose');
 
 //Defining a Schema:

@@ -5,7 +5,7 @@ const express = require('express'); //returns a function
 const db = require('./config/mongoose');
 
 //require the contact.js file:
-const Contact = require('./Models/contact');
+const Contact = require('./Models/contact.js');
 // 'Contact' will be used to populate contacts
 
 const app = express(); //invoking the returned function
@@ -28,7 +28,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('assets'));
 
 
-
 //an array of contact list:
 var contactList = []; 
 
@@ -48,13 +47,15 @@ app.get('/', function(req, res){
             })
         }); 
     */
+//    console.log(req.url);
 
     Contact.find({}, function(err, contacts){ // {} means * (all) , i.e there is no condition in finding 
+        //here, 'contacts' is all the Contacts found in contact_list 
         if (err) {
             console.log('Error in fetching contacts from db!');
             return;
         }
-        
+
         //to render the html file to browser:
         return res.render('home', {
             dynamicTitle : "Contact List",
@@ -66,6 +67,7 @@ app.get('/', function(req, res){
 
 //When the form sends (post) data, it would come here:
 app.post('/createContacts', function(req, res){
+    console.log(req.body);
 
     //Inserting into our database:
     Contact.create({  //creating a collection
@@ -81,8 +83,8 @@ app.post('/createContacts', function(req, res){
     })
 
 
-    /* 
     //appending the contact in contactList:
+    /*
     contactList.push({
         name: req.body.name,
         phoneNumber: req.body.phoneNum
@@ -120,20 +122,21 @@ app.get('/delete-Contact/:id', function(req, res){ //Using 'params'
     //removing the contact at the index:
     if (deletingContactIndex != -1) {
         contactList.splice(deletingContactIndex, 1);
-    }*/
+    }
+    */
 
     return res.redirect('/');
 })
 
 
 //Practice:
-/*
 app.get('/practice', function(req, res){
+    // console.log(res);
     return res.render('practice', {
-        title: " Let's play with ejs "
+        title: " Let's play with Ejs"
     });
 })
-*/
+
 
 app.listen(port, function(err){
     if (err) {

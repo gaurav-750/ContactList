@@ -5,6 +5,8 @@
         </title>
 
         <link rel="stylesheet" href="/css/homeStyles.css">
+
+        <link rel="stylesheet" href="/css/fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.min.css">
     </head>
     <body>
         <h1 id="page-heading">My Contact List</h1>
@@ -22,7 +24,8 @@
                          <!-- delete button -->
                         <div>                   <!-- /?phone <%= item.phone %> : Query params -->
                             <a href="/delete-Contact/<%= item._id %>" class="delete-button">
-                                <img src="/Images/rectangle-xmark-solid.svg" alt="">
+                                <!-- <img src="/Images/rectangle-xmark-solid.svg" alt=""> -->
+                                <i class="fa-solid fa-rectangle-xmark"></i>
                             </a>        
                         </div>
 
